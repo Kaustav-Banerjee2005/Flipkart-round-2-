@@ -21,8 +21,3 @@ This system helps Bengaluru Traffic Police:
 
 Use the navigation panel on the left.
 """)
-
-st.image(
-    "https://images.unsplash.com/photo-1519501025264-65ba15a82390",
-    use_container_width=True
-)
