@@ -123,6 +123,8 @@ input_data = pd.DataFrame({
 })
 if st.button("Generate AI Assessment"):
     priority = priority_model.predict(input_data)[0]
+    priority_conf = (priority_model.predict_proba(input_data).max() * 100)
+    st.metric("Priority Confidence",f"{priority_conf:.2f}%")
     barricade = barricade_model.predict(input_data)[0]
     diversion = diversion_model.predict(input_data)[0]
     manpower = manpower_model.predict(input_data)[0]
@@ -130,4 +132,5 @@ if st.button("Generate AI Assessment"):
     st.info(f"Barricade : {barricade}")
     st.warning(f"Diversion : {diversion}")
     st.error(f"Manpower : {manpower}")
+
 
