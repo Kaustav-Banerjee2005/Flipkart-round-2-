@@ -259,11 +259,7 @@ if st.button("🚀 Generate AI Assessment"):
         input_data
     )[0]
 
-    priority_conf = (
-        priority_model
-        .predict_proba(input_data)
-        .max() * 100
-    )
+   
 
     barricade = (
         barricade_model
@@ -308,10 +304,7 @@ if st.button("🚀 Generate AI Assessment"):
             f"Manpower\n\n{manpower}"
         )
 
-    st.metric(
-        "Priority Confidence",
-        f"{priority_conf:.2f}%"
-    )
+
 
     # ======================================
     # AI INTERPRETATION
